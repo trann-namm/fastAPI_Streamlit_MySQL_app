@@ -1,0 +1,54 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: startup-mysql
+    environment:
+      MYSQL_DATABASE: startup_db
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3306:3306"
+
+  crawl:
+    build:
+      context: ./Crawl
+    container_name: startup-python
+    working_dir: /src
+    restart: always
+    volumes:
+      - ./Crawl:/src
+    command: python crawling.py
+    depends_on:
+      - mysql
+
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: startup-backend
+    depends_on:
+      - mysql
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_HOST=mysql
+      - DATABASE_USER=root
+      - DATABASE_NAME=startup_db
+
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: startup-frontend
+    depends_on:
+      - backend
+    ports:
+      - "8501:8501"
+
+volumes:
+  mysql_data:
