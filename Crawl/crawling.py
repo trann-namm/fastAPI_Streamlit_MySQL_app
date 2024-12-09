@@ -4,7 +4,7 @@ import mysql.connector
 import sqlalchemy
 from bs4 import BeautifulSoup
 from datetime import datetime
-from config import *
+from .config import *
 url = 'https://www.cbinsights.com/research-unicorn-companies'
 
 data = requests.get(url, headers=headers).text

@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import mysql.connector
 from typing import List, Dict
 from pydantic import BaseModel, Field
-from config import *
+from .config import *
 app = FastAPI()
 
 # Add CORS middleware
