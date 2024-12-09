@@ -20,18 +20,3 @@ INSERT INTO startups VALUES
 (2, 'OpenAI', "$157.0", '22/07/2009', 'United States', 'San Francisco', 'Enterprise Tech', 'Khosla Ventures, Thrive Capital, Sequoia Capital'),
 (3, 'SHEIN', "$66.0", '03/07/2018', 'Singapore', '', 'Consumer & Retail', 'Tiger Global Management, Sequoia Capital China, Shunwei Capital Partners'),
 (4, 'Stripe', "$70.0", '23/01/2014', 'United States', 'San Francisco', 'Financial Services', 'Khosla Ventures, LowercaseCapital, capitalG');
-
-# Restrict root access
--- ALTER USER 'root'@'localhost' IDENTIFIED BY 'Password';
--- ALTER USER 'root'@'%' IDENTIFIED BY 'Password';
-
--- # Revoke unnecessary global privileges from root
--- REVOKE ALL PRIVILEGES ON *.* FROM 'root'@'localhost';
--- REVOKE ALL PRIVILEGES ON *.* FROM 'root'@'%';
-
--- # Grant minimal necessary privileges to root
--- GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER ON startup_db.* TO 'root'@'localhost';
--- GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER ON startup_db.* TO 'root'@'%';
-
--- # Flush privileges to ensure changes take effect
--- FLUSH PRIVILEGES;
