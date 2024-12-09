@@ -2,7 +2,16 @@
 
 ## Project Description
 The Startup Valuations Dashboard is a web application for analyzing startup data, built using modern technologies including FastAPI, Streamlit, MySQL, and Docker.
-
+## Table of contents
+- [Features](#features)
+- [Technoligies Used](#technologies-used)
+- [System Requirements](#system-requirements)
+- [Installation & Running the Project](#installation-&-running-the-project)
+- [Projets Architechture](#projects-architechture)
+- [API Endpoint](#api-endpont)
+- [Custom & Extensions](#custom-&-extensions)
+- [Notes](#features)
+- [Contributing](#features)
 ## Features
 - Detailed startup listing
 - Country-wise startup analytics
