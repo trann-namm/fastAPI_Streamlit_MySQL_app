@@ -7,9 +7,9 @@ The Startup Valuations Dashboard is a web application for analyzing startup data
 - [Technoligies Used](#technologies-used)
 - [System Requirements](#system-requirements)
 - [Installation & Running the Project](#installation-&-running-the-project)
-- [Projets Architechture](#projects-architechture)
+- [Projets Architechture](#project-architecture)
 - [API Endpoint](#api-endpoints)
-- [Custom & Extensions](#custom-&-extensions)
+- [Custom & Extensions](#customization-&-extension)
 - [Notes](#notes)
 - [Contributing](#contributing)
 ## Features
